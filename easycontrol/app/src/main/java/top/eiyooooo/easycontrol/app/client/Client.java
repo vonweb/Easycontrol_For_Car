@@ -292,7 +292,7 @@ public class Client {
       Surface surface = clientView.getSurface();
       Pair<byte[], Long> csd0 = new Pair<>(controlPacket.readFrame(videoStream), videoStream.readLong());
       Pair<byte[], Long> csd1 = useH265 ? null : new Pair<>(controlPacket.readFrame(videoStream), videoStream.readLong());
-      videoDecode = new VideoDecode(videoSize, surface, csd0, csd1, handler);
+      videoDecode = new VideoDecode(uuid, videoSize, surface, csd0, csd1, handler);
       // 循环处理报文
       while (!Thread.interrupted()) {
         videoDecode.decodeIn(controlPacket.readFrame(videoStream), videoStream.readLong());

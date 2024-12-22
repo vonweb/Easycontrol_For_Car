@@ -17,11 +17,13 @@ import java.util.UUID;
 import android.view.animation.LinearInterpolator;
 
 import top.eiyooooo.easycontrol.app.client.Client;
+import top.eiyooooo.easycontrol.app.client.GlPreferences;
 import top.eiyooooo.easycontrol.app.databinding.ActivityMainBinding;
 import top.eiyooooo.easycontrol.app.databinding.ItemRequestPermissionBinding;
 import top.eiyooooo.easycontrol.app.entity.AppData;
 import top.eiyooooo.easycontrol.app.entity.Device;
 import top.eiyooooo.easycontrol.app.helper.DeviceListAdapter;
+import top.eiyooooo.easycontrol.app.helper.MediaCodecHelper;
 import top.eiyooooo.easycontrol.app.helper.PublicTools;
 import top.eiyooooo.easycontrol.app.helper.ConnectHelper;
 
@@ -40,6 +42,7 @@ public class MainActivity extends Activity {
     AppData.init(this);
     PublicTools.setStatusAndNavBar(this);
     PublicTools.setLocale(this);
+    MediaCodecHelper.initialize(this, GlPreferences.readPreferences(this).glRenderer);
     mainActivity = ActivityMainBinding.inflate(this.getLayoutInflater());
     setContentView(mainActivity.getRoot());
     // 检测权限
