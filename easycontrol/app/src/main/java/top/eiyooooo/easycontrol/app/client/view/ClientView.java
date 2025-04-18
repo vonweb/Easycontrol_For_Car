@@ -1,6 +1,8 @@
 package top.eiyooooo.easycontrol.app.client.view;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.graphics.SurfaceTexture;
 import android.util.Pair;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
 
@@ -341,6 +344,22 @@ public class ClientView implements TextureView.SurfaceTextureListener {
 
     // 启动动画
     animator.start();
+  }
+
+  public void showKeyboard() {
+    AppData.inputMethodManager.toggleSoftInput(InputMethodManager.RESULT_UNCHANGED_SHOWN, InputMethodManager.HIDE_IMPLICIT_ONLY);
+  }
+
+  public void pasteClipboard() {
+    ClipboardManager clipBoard = AppData.clipBoard;
+    ClipData clipData = clipBoard.getPrimaryClip();
+
+    if (clipData == null)
+      return;
+
+    if (clipData.getItemCount() > 0) {
+      controlPacket.sendClipboardEvent(clipBoard.getPrimaryClip().getItemAt(0).getText().toString());
+    }
   }
 
   @Override

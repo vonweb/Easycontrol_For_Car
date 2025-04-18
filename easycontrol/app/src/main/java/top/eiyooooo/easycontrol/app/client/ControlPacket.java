@@ -77,7 +77,11 @@ public class ControlPacket {
 
   // 发送剪切板事件
   private void sendClipboardEvent() {
-    byte[] tmpTextByte = nowClipboardText.getBytes(StandardCharsets.UTF_8);
+    sendClipboardEvent(nowClipboardText);
+  }
+
+  public void sendClipboardEvent(String clipboardText) {
+    byte[] tmpTextByte = clipboardText.getBytes(StandardCharsets.UTF_8);
     if (tmpTextByte.length == 0 || tmpTextByte.length > 5000) return;
     ByteBuffer byteBuffer = ByteBuffer.allocate(5 + tmpTextByte.length);
     byteBuffer.put((byte) 3);

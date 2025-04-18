@@ -438,6 +438,12 @@ public class SmallView extends ViewOutlineProvider {
       controlPacket.sendPowerEvent();
       barViewTimer();
     });
+    smallView.buttonKeyboard.setOnClickListener(v -> {
+      clientView.showKeyboard();
+    });
+    smallView.buttonPaste.setOnClickListener(v -> {
+      clientView.pasteClipboard();
+    });
   }
 
   // 导航栏隐藏

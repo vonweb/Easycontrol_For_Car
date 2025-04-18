@@ -187,6 +187,24 @@
       android:focusable="false"
       android:src="@drawable/x"
       android:tint="@color/alert" />
+
+    <ImageView
+        android:id="@+id/button_keyboard"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="2dp"
+        android:focusable="false"
+        android:src="@drawable/keyboard_24px"
+        android:tint="@color/onCardBackground" />
+
+    <ImageView
+        android:id="@+id/button_paste"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="2dp"
+        android:focusable="false"
+        android:src="@drawable/content_paste_24px"
+        android:tint="@color/onCardBackground" />
   </GridLayout>
 
   <View

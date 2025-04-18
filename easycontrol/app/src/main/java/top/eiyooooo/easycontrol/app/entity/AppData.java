@@ -14,7 +14,9 @@ import android.os.Handler;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import java.io.File;
 
@@ -46,6 +48,8 @@ public class AppData {
   public static UiModeManager uiModeManager;
   public static UsageStatsManager usageStatsManager;
 
+  public static InputMethodManager inputMethodManager;
+
   // 设置值
   public static Setting setting;
 
@@ -70,6 +74,7 @@ public class AppData {
     windowManager = (WindowManager) main.getSystemService(Context.WINDOW_SERVICE);
     sensorManager = (SensorManager) main.getSystemService(Context.SENSOR_SERVICE);
     uiModeManager = (UiModeManager) main.getSystemService(Context.UI_MODE_SERVICE);
+    inputMethodManager = (InputMethodManager) main.getSystemService(Context.INPUT_METHOD_SERVICE);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
       usageStatsManager = (UsageStatsManager) main.getSystemService(Context.USAGE_STATS_SERVICE);
       uiHandler.postDelayed(() -> EventMonitor.monitorEventsList = dbHelper.getAllMonitorEvents(), 1000);

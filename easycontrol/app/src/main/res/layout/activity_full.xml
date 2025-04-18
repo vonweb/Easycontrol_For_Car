@@ -90,89 +90,107 @@
     android:tint="#DEDEDE" />
 
   <GridLayout
-    android:id="@+id/bar_view"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|end"
-    android:visibility="gone"
-    android:layout_marginEnd="10dp"
-    android:layout_marginBottom="45dp"
-    android:background="@drawable/background_cron"
-    android:columnCount="4"
-    android:elevation="6dp"
-    android:padding="8dp">
+      android:id="@+id/bar_view"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|end"
+      android:layout_marginEnd="10dp"
+      android:layout_marginBottom="45dp"
+      android:background="@drawable/background_cron"
+      android:columnCount="4"
+      android:elevation="6dp"
+      android:padding="8dp"
+      android:visibility="gone">
 
     <ImageView
-      android:id="@+id/button_nav_bar"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/not_equal"
-      android:tint="@color/onCardBackground" />
+        android:id="@+id/button_nav_bar"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/not_equal"
+        android:tint="@color/onCardBackground" />
 
     <ImageView
-      android:id="@+id/button_mini"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/minus"
-      android:tint="@color/onCardBackground" />
+        android:id="@+id/button_mini"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/minus"
+        android:tint="@color/onCardBackground" />
 
     <ImageView
-      android:id="@+id/button_full_exit"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/compress"
-      android:tint="@color/onCardBackground" />
+        android:id="@+id/button_full_exit"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/compress"
+        android:tint="@color/onCardBackground" />
 
     <ImageView
-      android:id="@+id/button_close"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/x"
-      android:tint="@color/alert" />
+        android:id="@+id/button_close"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/x"
+        android:tint="@color/alert" />
 
     <ImageView
-      android:id="@+id/button_transfer"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/share_out"
-      android:tint="@color/onCardBackground" />
+        android:id="@+id/button_transfer"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/share_out"
+        android:tint="@color/onCardBackground" />
 
     <ImageView
-      android:id="@+id/button_light_off"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/lightbulb_off"
-      android:tint="@color/onCardBackground" />
+        android:id="@+id/button_light_off"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/lightbulb_off"
+        android:tint="@color/onCardBackground" />
 
     <ImageView
-      android:id="@+id/button_power"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/power_off"
-      android:tint="@color/onCardBackground" />
+        android:id="@+id/button_power"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/power_off"
+        android:tint="@color/onCardBackground" />
 
     <ImageView
-      android:id="@+id/button_lock"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/lock"
-      android:tint="@color/onCardBackground" />
+        android:id="@+id/button_lock"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/lock"
+        android:tint="@color/onCardBackground" />
+
+    <ImageView
+        android:id="@+id/button_keyboard"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/keyboard_24px"
+        android:tint="@color/onCardBackground" />
+
+    <ImageView
+        android:id="@+id/button_paste"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_margin="4dp"
+        android:focusable="false"
+        android:src="@drawable/content_paste_24px"
+        android:tint="@color/onCardBackground" />
 
   </GridLayout>
 </FrameLayout>
