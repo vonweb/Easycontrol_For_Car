@@ -6,7 +6,7 @@ import android.media.AudioManager;
 import android.media.AudioTrack;
 import android.media.MediaCodec;
 import android.media.MediaFormat;
-import android.media.audiofx.LoudnessEnhancer;
+// import android.media.audiofx.LoudnessEnhancer;
 import android.os.Build;
 import android.os.Handler;
 
@@ -20,7 +20,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class AudioDecode {
   public MediaCodec decodec;
   public AudioTrack audioTrack;
-  public LoudnessEnhancer loudnessEnhancer;
+  // public LoudnessEnhancer loudnessEnhancer;
   private final MediaCodec.Callback callback = new MediaCodec.Callback() {
     @Override
     public void onInputBufferAvailable(@NonNull MediaCodec mediaCodec, int inIndex) {
@@ -49,14 +49,14 @@ public class AudioDecode {
     // 创建AudioTrack
     setAudioTrack();
     // 创建音频放大器
-    setLoudnessEnhancer();
+    // setLoudnessEnhancer();
   }
 
   public void release() {
     try {
       audioTrack.stop();
       audioTrack.release();
-      loudnessEnhancer.release();
+      // loudnessEnhancer.release();
       decodec.stop();
       decodec.release();
     } catch (Exception ignored) {
@@ -143,9 +143,9 @@ public class AudioDecode {
   }
 
   // 创建音频放大器
-  private void setLoudnessEnhancer() {
-    loudnessEnhancer = new LoudnessEnhancer(audioTrack.getAudioSessionId());
-    loudnessEnhancer.setTargetGain(2000);
-    loudnessEnhancer.setEnabled(true);
-  }
+  // private void setLoudnessEnhancer() {
+  //   loudnessEnhancer = new LoudnessEnhancer(audioTrack.getAudioSessionId());
+  //   loudnessEnhancer.setTargetGain(2000);
+  //   loudnessEnhancer.setEnabled(true);
+  // }
 }
